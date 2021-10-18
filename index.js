@@ -1,8 +1,16 @@
-const handler = e => {
-  console.log('Event handler', e);
-};
+function fetchWithNativeFetch() {
+  console.log('fetching with fetch');
+  return fetch('https://jsonplaceholder.typicode.com/todos/1')
+    .then(response => response.json())
+    .then(json => console.log(json))
+}
+
+function fetchWithAxios() {
+  console.log('fetching with axios');
+  return axios.get('https://jsonplaceholder.typicode.com/todos/1')
+    .then(json => console.log(json))
+}
 
 setInterval(() => {
-  console.log('Removing event listener');
-  document.removeEventListener("click", handler);
+  fetchWithAxios();
 }, 1000)
