@@ -3,6 +3,6 @@ const handler = e => {
 };
 
 setInterval(() => {
-  console.log('Removing');
-  document.removeEventListener("pointerdown", pointerDown);
+  console.log('Removing event listener');
+  document.removeEventListener("click", handler);
 }, 1000)
